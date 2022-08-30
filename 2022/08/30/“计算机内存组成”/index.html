@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“WELCOME!”, do whatever you want">
+    <meta name="keywords" content="“计算机动态内存组成”, do whatever you want">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“WELCOME!” | do whatever you want</title>
+    <title>“计算机动态内存组成” | do whatever you want</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“WELCOME!”</h1>
+                    <h1 class="description center-align post-title">“计算机动态内存组成”</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BC%80%E7%AB%AF/">
-                                <span class="chip bg-color">开端</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">计算机入门</span>
                             </a>
                         
                     </div>
@@ -463,9 +463,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="欢迎来到我的网站！"><a href="#欢迎来到我的网站！" class="headerlink" title="欢迎来到我的网站！"></a>欢迎来到我的网站！</h1><h2 id="Welcome-我叫张跃韬，一名武汉大学计算机学院的大一新生，在一位学长的帮助下搞了这个网站"><a href="#Welcome-我叫张跃韬，一名武汉大学计算机学院的大一新生，在一位学长的帮助下搞了这个网站" class="headerlink" title="Welcome! 我叫张跃韬，一名武汉大学计算机学院的大一新生，在一位学长的帮助下搞了这个网站"></a>Welcome! 我叫张跃韬，一名武汉大学计算机学院的大一新生，在一位学长的帮助下搞了这个网站</h2><p>*<em>接下来的四年，我将在这里记录自己的大学生活，并分享自己的学习过程中遇到的坑和解决方式，希望随着时间积累我能积累更多经验以帮助更多人！</em></p>
-<p><img src="/2022/08/23/%E2%80%9C2%E2%80%9D/8c9e2e66afa051f9a262e156ace8909.jpg"></p>
-<p><img src="/2022/08/23/%E2%80%9C2%E2%80%9D/b9a148c799b4ac3a3550cd6293a6571.jpg"></p>
+                <h1 id="友友们，今天咱们简单扒一扒计算机的内在的一小部分—-动态内存"><a href="#友友们，今天咱们简单扒一扒计算机的内在的一小部分—-动态内存" class="headerlink" title="友友们，今天咱们简单扒一扒计算机的内在的一小部分—-动态内存"></a>友友们，今天咱们简单扒一扒计算机的内在的一小部分—-动态内存</h1><p>首先咱们先看看计算机系统的硬件组成</p>
+<p><img src="/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/R-C.png"></p>
+<p>可以看到，储存器周围很多的数据流与控制流，这就意味着它不单单是一个类似于仓库（当然这个功能是肯定有的）的东西，它的存在与程序的运行密不可分，而这一部分的内存又被叫做<strong>动态内存</strong>，简单来说它就像是考试时的草稿纸，办公时的办公桌，一些暂时需要的步骤或工具都在里面存放，随时用随时改随时弃，灵活而多变。其实它和手机的运存是一个道理，只不过手机的8g在电脑面前根本不够看。</p>
+<h4 id="计算机的动态内存的组成可分为以下几个部分"><a href="#计算机的动态内存的组成可分为以下几个部分" class="headerlink" title="计算机的动态内存的组成可分为以下几个部分"></a>计算机的动态内存的组成可分为以下几个部分</h4><p><img src="/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/909c743396bd41f59686a3c76b05f2be.png"></p>
+<h4 id="其中内存四区内容如下"><a href="#其中内存四区内容如下" class="headerlink" title="其中内存四区内容如下"></a>其中内存四区内容如下</h4><p>​        <strong>堆区（heap）</strong>：一般由程序员手动分配释放（动态内存申请与释放），若程序员不释放，程序结束时可能由操作系统回收。</p>
+<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的形参、局部变量等。当函数执行完毕时自动释放</p>
+<p> <strong>全局区（global &#x2F; stack）</strong>：用于存放全局变量和静态变量， 里面细分有一个常量区，一些常量存放在此。该区域是在程序结束后由操作系统释放。</p>
+<p><strong>代码区（code &#x2F; text）</strong>：用于存放程序代码，字符串常量也存放于此。</p>
+<p>其实从中也不难理解，在编程过程中你的每一个指令，每一个定义的常量与变量都会由电脑在内存中自动分配一块地方来储存转化后的数字码，同时会记录下这个内存的地址以方便之后由电脑或程序员来寻找。同时储存区的不同也就意味着，有些变量虽然名字一样但实则毫无关系并且不能相互影响（其实可以通过指针来进行链接，但这里先不讨论）</p>
+<p>有一点需要注意，不论是内存还是其中的几个区域，其大小都是有限的，如果你肆无忌惮的使用，比如搞个死循环的程序让电脑不断运行，那么不仅仅电脑会发热发烫，还会造成栈溢出或内存泄露等后果，这也是程序员所应该避免的</p>
+<p>好了，就简单说到这里。</p>
 
                 
             </div>
@@ -492,7 +500,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zytsyj.github.io/2022/08/23/%E2%80%9C2%E2%80%9D/">http://zytsyj.github.io/2022/08/23/%E2%80%9C2%E2%80%9D/</a>
+                    <a href="http://zytsyj.github.io/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/">http://zytsyj.github.io/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -530,8 +538,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BC%80%E7%AB%AF/">
-                                    <span class="chip bg-color">开端</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">计算机入门</span>
                                 </a>
                             
                         </div>
@@ -572,17 +580,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/25/%E2%80%9C%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E2%80%9D/">
+                <a href="/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="“编译器与环境搭建”">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="“计算机动态内存组成”">
                         
-                        <span class="card-title">“编译器与环境搭建”</span>
+                        <span class="card-title">“计算机动态内存组成”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -592,9 +601,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -603,6 +612,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -618,16 +628,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/23/%E2%80%9C2%E2%80%9D/">
+                <a href="/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%BB%E8%BE%91%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="“WELCOME!”">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“计算机逻辑”">
                         
-                        <span class="card-title">“WELCOME!”</span>
+                        <span class="card-title">“计算机逻辑”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -638,7 +648,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-30
                             </span>
                         <span class="publish-author">
                             
@@ -648,12 +658,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BC%80%E7%AB%AF/">
-                        <span class="chip bg-color">开端</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">计算机入门</span>
                     </a>
                     
                 </div>
