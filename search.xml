@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>“栈和堆”</title>
+      <link href="/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/"/>
+      <url>/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<h3 id="友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。"><a href="#友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。" class="headerlink" title="友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。"></a>友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。</h3><p>  其实，从上一篇的简单介绍中，我们可以得知，栈是由计算机自动分配内存以及自动删除分配的，而堆则是由程序员手动调用的，这便是两者之间最本质区别，其余两者之间一切的不同都是由这一点来引出的，那么下面让我们来分别详细的阐释这两个不同的储存区域。</p><h3 id="先说说栈-stack"><a href="#先说说栈-stack" class="headerlink" title="先说说栈(stack)"></a>先说说栈(stack)</h3><p>栈（stack）是由计算机自动分配的一块内存区域，而既然是由计算机自动控制的，也就注定它遵守着各种各样的规则。事实上，当你每创建一个函数，都会在栈区那里来创建一个栈帧，而每一个你所定义的局部变量都只可以在这个函数对应的栈帧之内使用，也就是说每一个函数的局部变量，它的存活期只在其对应的栈帧之内。<br>下面我们举一个例子来进行说明，比如说你在main函数中调用了SOE函数，那么，当程序运行到main中调用SOE函数这一步时，main函数的栈帧会暂停，它就会自动跳转到main之上的SOE的栈帧运行，在SOE 完成之后，再跳回到原来的main函数继续进行，如图所示</p><p><img src="/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/4dffed168eadbe1ef7f39b040bc0ebe.jpg"></p><p>   其实在图中，大家除了要看出来不同的局部变量的存活范围，还应该知道看似你在主函数中调用了其他一个函数，并将主函数中的一个值导入，但实际上只不过是将主函数的一个局部变量映射到了被调函数当中。哪怕他们的名称还有值一模一样，存活期的不同就决定了它们注定是两个完全不同的，没有任何关联的局部变量，其实关于这一点，大家可以在具体的函数的传值和传引用这两个用法之中看出来，有关这两个用法就抽空再说吧（摆！）。<br>  最后再补充十分重要的一点：栈溢出。上面已经不止一次的提过栈是由计算机自动控制的，故它的内存大小是有限的，一般为1mb，而一旦在栈中所储存着各种变量超出了这个范围，就会直接引起程序崩溃！这可是连职业程序员也需要万分谨慎的地方。</p><h3 id="再说说堆-heap"><a href="#再说说堆-heap" class="headerlink" title="再说说堆(heap)"></a>再说说堆(heap)</h3><p>   堆是由程序员所自由支配的，它与栈之间的不同，其实就像是汽车的手动挡和自动挡。由于是程序员所操控，便多了几分灵活性，同时也少去了计算机控制的便捷性。<br>   使用堆的过程其实就类似于向计算机申请一个明确大小和格式的内存，在这一过程中，便需要用到函数。在c中为malloc和free，在c++中则多了new和delete。由于C++可以看作是c的超集，所以实际上new和malloc相似，delete和free相似，具体格式如下</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> p=(<span class="type">int</span>)<span class="built_in">malloc</span>(<span class="type">int</span>);</span><br><span class="line">    <span class="built_in">free</span> p;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>   由于堆的大小相比下没有上限（取决于你计算机的配置）这里其实只需要担心一点，内存泄露，即有始无终：只用malloc申请了内存却没有用free释放，那么所申请的内存将一直存在，一直占用宝贵的内存资源，造成程序运行时占用的垃圾内存不断累积（你可以试着打开任务管理器看看一个没有释放内存的程序重复运行的内存占用的暴涨）。注意到这个，基本上就可以灵活运用堆了。</p><p>好了友友们，终于写完了，累死我了⊙﹏⊙</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“与君共勉--军训留念”</title>
+      <link href="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/"/>
+      <url>/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<p><strong>为期十几天的军训就这样结束了，感觉时间不知不觉间就都溜走了。。。</strong><br><strong>现在回想一下，其实感觉蛮充实和有意思的，虽然也在被迫早起时骂过娘，在站军姿和踢正步时咬牙切齿，但是却也有和同学们一同训练的共勉，与教官围坐聊天时的开怀等等乐事，可以说一次军训彻底拉开了我大学生活的序幕！</strong><br>其实再稍微回忆一下，从入校到军训结束真的干了不少事，这里我就稍稍总结一下吧。（死去的回忆开始攻击我）</p><h3 id="在这十几天中"><a href="#在这十几天中" class="headerlink" title="在这十几天中"></a>在这十几天中</h3><h1 id="我"><a href="#我" class="headerlink" title="我"></a>我</h1><h3 id="认识了我的好舍友们"><a href="#认识了我的好舍友们" class="headerlink" title="认识了我的好舍友们"></a>认识了我的好舍友们</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/85bdfafb85980ba62e4146774b9d7a7.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/948674d7c8f0599180a9483102ad193.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/abf2060c5edb6db42d3d236c6cf2a07.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/a4a59899ed7cadbb59a5eb84451bcc9.jpg"></p><h3 id="和对门的弟兄玩了好玩的桌游"><a href="#和对门的弟兄玩了好玩的桌游" class="headerlink" title="和对门的弟兄玩了好玩的桌游"></a>和对门的弟兄玩了好玩的桌游</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/v2-18c8be3283ae1d2f3a58f69febfad9eb_r.jpg"></p><p>这是那位大兄弟！</p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/5028baa8174314e74968f93d49574c3.jpg"></p><h3 id="装饰了自己的小窝"><a href="#装饰了自己的小窝" class="headerlink" title="装饰了自己的小窝"></a>装饰了自己的小窝</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/3448952d800c26f478925ff5a382d3e.jpg"></p><h3 id="看到了很多美景"><a href="#看到了很多美景" class="headerlink" title="看到了很多美景"></a>看到了很多美景</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/7ff1b251d1265f6af6a8d708de9982b.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/0dc17269ec7adf08914055abd2b9842.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/c906feae0e1127df1b29e3f80a334dc.jpg"></p><h3 id="结识了有趣又有爱的班助-照片经过了同意哦"><a href="#结识了有趣又有爱的班助-照片经过了同意哦" class="headerlink" title="结识了有趣又有爱的班助(照片经过了同意哦)"></a>结识了有趣又有爱的班助(照片经过了同意哦)</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/6862f099437fe339bb0a5cc021181f6.jpg"></p><h3 id="吃到了丰盛的食堂饭菜"><a href="#吃到了丰盛的食堂饭菜" class="headerlink" title="吃到了丰盛的食堂饭菜"></a>吃到了丰盛的食堂饭菜</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/3d6e20520c7aa686c2d293d1b7960d3.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/773c96be0a0dacf7e0dda2aa54034cf.jpg"></p><h3 id="碰到了一位帮了我很多的图图学长"><a href="#碰到了一位帮了我很多的图图学长" class="headerlink" title="碰到了一位帮了我很多的图图学长"></a>碰到了一位帮了我很多的图图学长</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/972ccce5d24a6aa550d1aaa381aa989.jpg"></p><h3 id="遇到了可爱的童鞋们"><a href="#遇到了可爱的童鞋们" class="headerlink" title="遇到了可爱的童鞋们"></a>遇到了可爱的童鞋们</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/cd1dc4290595abcf87da0a23fe0fe8c.jpg"></p><h3 id="认识了一位很棒的教官（性感教官，在线军训）（没有露脸哦）"><a href="#认识了一位很棒的教官（性感教官，在线军训）（没有露脸哦）" class="headerlink" title="认识了一位很棒的教官（性感教官，在线军训）（没有露脸哦）"></a>认识了一位很棒的教官（性感教官，在线军训）（没有露脸哦）</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/db98af3366faf8b3a07ab1da09cf24d.jpg"></p><h3 id="又一次决定了自己的命运并杀死诸多自己的可能性"><a href="#又一次决定了自己的命运并杀死诸多自己的可能性" class="headerlink" title="又一次决定了自己的命运并杀死诸多自己的可能性"></a>又一次决定了自己的命运并杀死诸多自己的可能性</h3><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/d65a4d4211230e88a1a69e2acfc4ac6.jpg"></p><p><img src="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/b3df2ceed53250dae66565bf503fe40.jpg"></p><p><strong>盘点过去这段时间的点点滴滴，只觉万分感慨与满足，再几日便正式开课了，便又有一点小期待，合在一起便有一点小确幸的赶脚（笑)</strong></p><p>谨以此纪念大学的开始！</p><h2 id="诸君共勉！"><a href="#诸君共勉！" class="headerlink" title="诸君共勉！"></a>诸君共勉！</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活随感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>“计算机动态内存组成”</title>
       <link href="/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/"/>
       <url>/2022/08/30/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%AD%98%E7%BB%84%E6%88%90%E2%80%9D/</url>
