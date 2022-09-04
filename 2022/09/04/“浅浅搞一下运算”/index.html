@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“栈和堆”, do whatever you want">
+    <meta name="keywords" content="“浅浅搞一下运算”, do whatever you want">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“栈和堆” | do whatever you want</title>
+    <title>“浅浅搞一下运算” | do whatever you want</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“栈和堆”</h1>
+                    <h1 class="description center-align post-title">“浅浅搞一下运算”</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
-                                <span class="chip bg-color">计算机入门</span>
+                            <a href="/tags/c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">c语言入门</span>
                             </a>
                         
                     </div>
@@ -463,16 +463,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。"><a href="#友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。" class="headerlink" title="友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。"></a>友友们，上一篇，我们讲述了动态内存的组成和运用这一期重点来讲一下其中的两个结构栈（stack）和堆（heap）的区别与作用。</h3><p>  其实，从上一篇的简单介绍中，我们可以得知，栈是由计算机自动分配内存以及自动删除分配的，而堆则是由程序员手动调用的，这便是两者之间最本质区别，其余两者之间一切的不同都是由这一点来引出的，那么下面让我们来分别详细的阐释这两个不同的储存区域。</p>
-<h3 id="先说说栈-stack"><a href="#先说说栈-stack" class="headerlink" title="先说说栈(stack)"></a>先说说栈(stack)</h3><p>栈（stack）是由计算机自动分配的一块内存区域，而既然是由计算机自动控制的，也就注定它遵守着各种各样的规则。事实上，当你每创建一个函数，都会在栈区那里来创建一个栈帧，而每一个你所定义的局部变量都只可以在这个函数对应的栈帧之内使用，也就是说每一个函数的局部变量，它的存活期只在其对应的栈帧之内。<br>下面我们举一个例子来进行说明，比如说你在main函数中调用了SOE函数，那么，当程序运行到main中调用SOE函数这一步时，main函数的栈帧会暂停，它就会自动跳转到main之上的SOE的栈帧运行，在SOE 完成之后，再跳回到原来的main函数继续进行，如图所示</p>
-<p><img src="/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/4dffed168eadbe1ef7f39b040bc0ebe.jpg"></p>
-<p>   其实在图中，大家除了要看出来不同的局部变量的存活范围，还应该知道看似你在主函数中调用了其他一个函数，并将主函数中的一个值导入，但实际上只不过是将主函数的一个局部变量映射到了被调函数当中。哪怕他们的名称还有值一模一样，存活期的不同就决定了它们注定是两个完全不同的，没有任何关联的局部变量，其实关于这一点，大家可以在具体的函数的传值和传引用这两个用法之中看出来，有关这两个用法就抽空再说吧（摆！）。<br>  最后再补充十分重要的一点：栈溢出。上面已经不止一次的提过栈是由计算机自动控制的，故它的内存大小是有限的，一般为1mb，而一旦在栈中所储存着各种变量超出了这个范围，就会直接引起程序崩溃！这可是连职业程序员也需要万分谨慎的地方。</p>
-<h3 id="再说说堆-heap"><a href="#再说说堆-heap" class="headerlink" title="再说说堆(heap)"></a>再说说堆(heap)</h3><p>   堆是由程序员所自由支配的，它与栈之间的不同，其实就像是汽车的手动挡和自动挡。由于是程序员所操控，便多了几分灵活性，同时也少去了计算机控制的便捷性。<br>   使用堆的过程其实就类似于向计算机申请一个明确大小和格式的内存，在这一过程中，便需要用到函数。在c中为malloc和free，在c++中则多了new和delete。由于C++可以看作是c的超集，所以实际上new和malloc相似，delete和free相似，具体格式如下</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> p=(<span class="type">int</span>)<span class="built_in">malloc</span>(<span class="type">int</span>);</span><br><span class="line">    <span class="built_in">free</span> p;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <p><strong>今天我终于想起来要填一下c语言的坑（才不是觉得写语言文章又累又无聊)！仔细想了想在Hello World后应该搞点什么后，我最终决定讲一讲运算符。</strong></p>
+<p><img src="/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/95de3005b61ff6418cbcb2bef0043eb.jpg"></p>
+<h5 id="（解释一下，图是我偷的）（豪横）"><a href="#（解释一下，图是我偷的）（豪横）" class="headerlink" title="（解释一下，图是我偷的）（豪横）"></a>（解释一下，图是我偷的）（豪横）</h5><p>从上图可以看到，大部分的运算逻辑和数学是相通的，其实需要注意的就是一些格式语法的区别，<strong>比如说</strong>：</p>
+<ol>
+<li><p>“&#x3D;”在c语言中是赋值的意思，即把等号右边的值给左边</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a,b;</span><br><span class="line">a=<span class="number">10</span>;</span><br><span class="line">b=a</span><br></pre></td></tr></table></figure>
 
+<p>如上面的代码，a，b就都是10，而想表示相等则要用”&#x3D;&#x3D;”。</p>
+</li>
+<li><p>c语言中有很多简便符号，如”+&#x3D;” “-&#x3D;” “*&#x3D;”，这里的&#x3D;其实都是赋值的意思，例如”a+&#x3D;b”就是”a&#x3D;a+b”的意思，其余的简便符号也就同理了。</p>
+</li>
+<li><p>再讲几个特殊的”++” “–”，这个其实也好理解，”a++&#x2F;++a”都是”a&#x3D;a+1”的意思，区别在于，前者本身依然是”a”的值，而后者则是”a+1”的值，具体看以下的代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">10</span></span><br><span class="line">    b=a++</span><br><span class="line">    c=a</span><br><span class="line">    d=++a</span><br><span class="line">    e=a</span><br></pre></td></tr></table></figure>
 
-<p>   由于堆的大小相比下没有上限（取决于你计算机的配置）这里其实只需要担心一点，内存泄露，即有始无终：只用malloc申请了内存却没有用free释放，那么所申请的内存将一直存在，一直占用宝贵的内存资源，造成程序运行时占用的垃圾内存不断累积（你可以试着打开任务管理器看看一个没有释放内存的程序重复运行的内存占用的暴涨）。注意到这个，基本上就可以灵活运用堆了。</p>
-<p>好了友友们，终于写完了，累死我了⊙﹏⊙</p>
+<p>那么这个时候，b&#x3D;10,c&#x3D;11,d&#x3D;12,e&#x3D;12，有没有脑袋晕呢？仔细想一想，其实蛮好理解的。</p>
+</li>
+</ol>
+<p>好了，今天就到这了，我累了，我摆了。</p>
 
                 
             </div>
@@ -499,7 +507,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zytsyj.github.io/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/">http://zytsyj.github.io/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/</a>
+                    <a href="http://zytsyj.github.io/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/">http://zytsyj.github.io/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,8 +545,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
-                                    <span class="chip bg-color">计算机入门</span>
+                                <a href="/tags/c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">c语言入门</span>
                                 </a>
                             
                         </div>
@@ -579,9 +587,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/">
                     <div class="card-image">
@@ -599,9 +608,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -610,6 +619,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -628,13 +638,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/01/%E2%80%9C%E4%B8%8E%E5%90%9B%E5%85%B1%E5%8B%89-%E5%86%9B%E8%AE%AD%E7%95%99%E5%BF%B5%E2%80%9D/">
+                <a href="/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="“与君共勉--军训留念”">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="“栈和堆”">
                         
-                        <span class="card-title">“与君共勉--军训留念”</span>
+                        <span class="card-title">“栈和堆”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -658,8 +668,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%84%9F/">
-                        <span class="chip bg-color">生活随感</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">计算机入门</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>“浅浅搞一下运算”</title>
+      <link href="/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/"/>
+      <url>/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<p><strong>今天我终于想起来要填一下c语言的坑（才不是觉得写语言文章又累又无聊)！仔细想了想在Hello World后应该搞点什么后，我最终决定讲一讲运算符。</strong></p><p><img src="/2022/09/04/%E2%80%9C%E6%B5%85%E6%B5%85%E6%90%9E%E4%B8%80%E4%B8%8B%E8%BF%90%E7%AE%97%E2%80%9D/95de3005b61ff6418cbcb2bef0043eb.jpg"></p><h5 id="（解释一下，图是我偷的）（豪横）"><a href="#（解释一下，图是我偷的）（豪横）" class="headerlink" title="（解释一下，图是我偷的）（豪横）"></a>（解释一下，图是我偷的）（豪横）</h5><p>从上图可以看到，大部分的运算逻辑和数学是相通的，其实需要注意的就是一些格式语法的区别，<strong>比如说</strong>：</p><ol><li><p>“&#x3D;”在c语言中是赋值的意思，即把等号右边的值给左边</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a,b;</span><br><span class="line">a=<span class="number">10</span>;</span><br><span class="line">b=a</span><br></pre></td></tr></table></figure><p>如上面的代码，a，b就都是10，而想表示相等则要用”&#x3D;&#x3D;”。</p></li><li><p>c语言中有很多简便符号，如”+&#x3D;” “-&#x3D;” “*&#x3D;”，这里的&#x3D;其实都是赋值的意思，例如”a+&#x3D;b”就是”a&#x3D;a+b”的意思，其余的简便符号也就同理了。</p></li><li><p>再讲几个特殊的”++” “–”，这个其实也好理解，”a++&#x2F;++a”都是”a&#x3D;a+1”的意思，区别在于，前者本身依然是”a”的值，而后者则是”a+1”的值，具体看以下的代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">10</span></span><br><span class="line">    b=a++</span><br><span class="line">    c=a</span><br><span class="line">    d=++a</span><br><span class="line">    e=a</span><br></pre></td></tr></table></figure><p>那么这个时候，b&#x3D;10,c&#x3D;11,d&#x3D;12,e&#x3D;12，有没有脑袋晕呢？仔细想一想，其实蛮好理解的。</p></li></ol><p>好了，今天就到这了，我累了，我摆了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> c语言入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>“栈和堆”</title>
       <link href="/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/"/>
       <url>/2022/09/01/%E2%80%9C%E6%A0%88%E5%92%8C%E5%A0%86%E2%80%9D/</url>
