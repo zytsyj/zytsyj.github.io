@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>”自定义函数“</title>
+      <link href="/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/"/>
+      <url>/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．"><a href="#好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．" class="headerlink" title="好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．"></a>好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．</h2><p>在切入正题前我先来浅讲一下为什么要自定义函数，其实往简单了说就是为了程序设计的简洁与简便， 因为C数库中的简单函数单个并不足以完成一些基本需重复的操作，于是将多个函数操作打包到一起成为一个新的函数便成为最佳手段。而往大了说则是因为C语言是面向过程的语言，而自定义函数恰恰是面向过程思想模块化的一种体现。</p><p><img src="/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/944179aa2f964b723b7206aea7a615c.jpg"></p><p><em><strong>（浅说一下，结构化思想的进一步发展是对象化的编程思想，我们熟知的c++便是秉承这种思想的对象化语言）</strong></em></p><p>那么接下来就来详细介绍一下自定义的语法<br>首先要写出函数声明也叫函数头由返回类型    函数名（）三部分组成。<br>返回类型是指最后会将一个什么类型的值赋给函数，比如int， double。你也完全可以不返回，只要在前面写一个void就行。<br>函数名则是田你来随心决定。<br>之后则是函数主体应放在花括号｛｝中完成。<br>来看看一个例子</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">hahaha</span> <span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;我是憨憨\n&quot;</span>)；</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> lllll ()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;我是&quot;</span>)；</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;18&quot;</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    hahaha();</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">11111</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>；</span><br><span class="line">&#125;</span><br><span class="line">这样输出结果就是</span><br><span class="line">    我是憨憨</span><br><span class="line">    我是<span class="number">18</span></span><br></pre></td></tr></table></figure><p>怎么样，是不是一下就学会了！</p><h3 id="在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想"><a href="#在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想" class="headerlink" title="在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想"></a>在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 韬哥的c语言入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>“c的数据”</title>
       <link href="/2022/09/05/%E2%80%9Cc%E7%9A%84%E6%95%B0%E6%8D%AE%E2%80%9D/"/>
       <url>/2022/09/05/%E2%80%9Cc%E7%9A%84%E6%95%B0%E6%8D%AE%E2%80%9D/</url>
