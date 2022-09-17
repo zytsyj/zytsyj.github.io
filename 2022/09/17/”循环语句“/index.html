@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="”自定义函数“, do whatever you want">
+    <meta name="keywords" content="”循环语句“, do whatever you want">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>”自定义函数“ | do whatever you want</title>
+    <title>”循环语句“ | do whatever you want</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">”自定义函数“</h1>
+                    <h1 class="description center-align post-title">”循环语句“</h1>
                 </div>
             </div>
         </div>
@@ -463,14 +463,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．"><a href="#好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．" class="headerlink" title="好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．"></a>好了，各位友友们，今天让我们浅讲一下自定义函数这个事情．</h2><p>在切入正题前我先来浅讲一下为什么要自定义函数，其实往简单了说就是为了程序设计的简洁与简便， 因为C数库中的简单函数单个并不足以完成一些基本需重复的操作，于是将多个函数操作打包到一起成为一个新的函数便成为最佳手段。而往大了说则是因为C语言是面向过程的语言，而自定义函数恰恰是面向过程思想模块化的一种体现。</p>
-<p><img src="/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/944179aa2f964b723b7206aea7a615c.jpg"></p>
-<p><em><strong>（浅说一下，结构化思想的进一步发展是对象化的编程思想，我们熟知的c++便是秉承这种思想的对象化语言）</strong></em></p>
-<p>那么接下来就来详细介绍一下自定义的语法<br>首先要写出函数声明也叫函数头由返回类型    函数名（）三部分组成。<br>返回类型是指最后会将一个什么类型的值赋给函数，比如int， double。你也完全可以不返回，只要在前面写一个void就行。<br>函数名则是田你来随心决定。<br>之后则是函数主体应放在花括号｛｝中完成。<br>来看看一个例子</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">hahaha</span> <span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;我是憨憨\n&quot;</span>)；</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> lllll ()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;我是&quot;</span>)；</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;18&quot;</span>；</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    hahaha();</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">11111</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>；</span><br><span class="line">&#125;</span><br><span class="line">这样输出结果就是</span><br><span class="line">    我是憨憨</span><br><span class="line">    我是<span class="number">18</span></span><br></pre></td></tr></table></figure>
+                <h2 id="今天再推进一下c语言这个板块。"><a href="#今天再推进一下c语言这个板块。" class="headerlink" title="今天再推进一下c语言这个板块。"></a>今天再推进一下c语言这个板块。</h2><h2 id="呃呃，最近有亿点点忙以至于更新频率都下去了。"><a href="#呃呃，最近有亿点点忙以至于更新频率都下去了。" class="headerlink" title="呃呃，最近有亿点点忙以至于更新频率都下去了。"></a>呃呃，最近有亿点点忙以至于更新频率都下去了。</h2><p>循环结构是编程中一个必不可少的部分，无论是各种线性结构的遍历还是一个阶层运算之类的小程序，都少不了循环结构的出场。</p>
+<p><strong>它很基础但是很重要！</strong></p>
+<h3 id="1-while循环"><a href="#1-while循环" class="headerlink" title="1.while循环"></a>1.while循环</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span>   </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (<span class="comment">/* 条件 */</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="comment">/* 满足条件后干什么 */</span></span><br><span class="line">   &#125;</span><br><span class="line">*****************************</span><br><span class="line">   <span class="keyword">while</span> (a&lt;=<span class="number">20</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      a++</span><br><span class="line">      <span class="comment">/* code */</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>怎么样，是不是一下就学会了！</p>
-<h3 id="在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想"><a href="#在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想" class="headerlink" title="在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想"></a>在以后的编程中，其实建议多多使用自定义的函数，去贴合结构化的思想</h3>
+<h3 id="2-do循环"><a href="#2-do循环" class="headerlink" title="2.do循环"></a>2.do循环</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span>   </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">   <span class="comment">/* 干什么 */</span></span><br><span class="line">  &#125; <span class="keyword">while</span> (<span class="comment">/* 满足条件时继续干 */</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">   a++</span><br><span class="line">  &#125; <span class="keyword">while</span> (a&lt;=<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-for循环"><a href="#3-for循环" class="headerlink" title="3.for循环"></a>3.for循环</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span>   </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>  std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++)</span><br><span class="line">   &#123;</span><br><span class="line">      a++</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">/*for循环是最常用的循环体，因为其自带的计数属性导致其使用时异常方便</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-循环的嵌套"><a href="#4-循环的嵌套" class="headerlink" title="4.循环的嵌套"></a>4.循环的嵌套</h3><p><em><strong>这部分先埋个坑，之后在搞。</strong></em></p>
+
                 
             </div>
             <hr/>
@@ -496,7 +498,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zytsyj.github.io/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/">http://zytsyj.github.io/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/</a>
+                    <a href="http://zytsyj.github.io/2022/09/17/%E2%80%9D%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E2%80%9C/">http://zytsyj.github.io/2022/09/17/%E2%80%9D%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E2%80%9C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,9 +578,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/09/17/%E2%80%9D%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E2%80%9C/">
                     <div class="card-image">
@@ -596,9 +599,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -607,6 +610,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -625,13 +629,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/05/%E2%80%9Cc%E7%9A%84%E6%95%B0%E6%8D%AE%E2%80%9D/">
+                <a href="/2022/09/13/%E2%80%9D%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E2%80%9C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="“c的数据”">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="”自定义函数“">
                         
-                        <span class="card-title">“c的数据”</span>
+                        <span class="card-title">”自定义函数“</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -642,7 +646,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-13
                             </span>
                         <span class="publish-author">
                             
