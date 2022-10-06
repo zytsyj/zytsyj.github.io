@@ -5,12 +5,37 @@
     
     <entry>
       <title>“类与对象之封装”</title>
-      <link href="/2022/10/05/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/"/>
-      <url>/2022/10/05/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/</url>
+      <link href="/2022/10/06/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/"/>
+      <url>/2022/10/06/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="哦，我的朋友，看在列宁的份上，答应我一定要了解完结构体再来阅读这篇文章，好吗？"><a href="#哦，我的朋友，看在列宁的份上，答应我一定要了解完结构体再来阅读这篇文章，好吗？" class="headerlink" title="哦，我的朋友，看在列宁的份上，答应我一定要了解完结构体再来阅读这篇文章，好吗？"></a>哦，我的朋友，看在列宁的份上，答应我一定要了解完结构体再来阅读这篇文章，好吗？</h1><p>好了，不闹了，大家看到标题应该也知道，今天我们要讲的就正式涉及到c++的面向对象编程了。c++面向对象的三大特性包括，封装，继承以及多态，而今天要讲的便是封装这一特性。</p><h2 id="1-何为对象与类"><a href="#1-何为对象与类" class="headerlink" title="1.何为对象与类"></a>1.何为对象与类</h2><p><strong>C++认为万事万物都皆为对象！</strong></p><p><strong>而对象上有其属性和行为</strong></p><p>例如：</p><p> 人可以作为对象，属性有姓名、年龄、身高、体重…，行为有走、跑、跳、吃饭、唱歌…</p><p> 车也可以作为对象，属性有轮胎、方向盘、车灯…,行为有载人、放音乐、放空调…</p><p><strong>而具有相同特征的对象便可以抽象为一个类</strong></p><p>例如</p><p>黄种人，白种人，黑种人等都是人，便可以抽象为一个人类</p><p>小兔子，小乌龟，小鸡子都是动物，便可以抽象为一个动物类</p><p>（注意，面向对象是种编程思维上的进步，其重心绝不是在语法之上，一定要充分去理解这种思想）</p><h2 id="2-何为封装"><a href="#2-何为封装" class="headerlink" title="2.何为封装"></a>2.何为封装</h2><p><strong>将属性和行为作为一个整体即为封装，表现生活中的事物将属性和行为加以<em>权限</em>控制</strong></p><p>封装的高明之处在于它将一个类中的对象封起来，加了一层隔膜，让类中的对象处于一种安全不易更改与丢失的状态其具体的语法实现则与结构体十分相似，可以说<strong>封装性便是c中结构体的进一步演化</strong></p><p>就论具体的区别而言，类与结构体只有一个区别，那就是权限，访问类中对象的权限。</p><p>在类中有三种权限：公共，保护与私有。其中公共权限的对象与结构体相同，而保护与私有权限的则只能类内访问，即在类的外部是无法更改其数据的或读取，唯有类内的成员可以访问。</p><p>也就是说如果你想要在类外调用公共权限以外的对象，便只能提前在类的公共权限处编写一个成员函数来访问然后在类外调用这个函数，这种类型的函数又被叫做接口。如此一来可操作性便大大提升，你完全可以做到让一个对象只读或只写或可读可写。（这个的具体实现下次再说了）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">//姓名  公共权限</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> string m_Name;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//汽车  保护权限</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"> string m_Car;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//银行卡密码  私有权限</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"> <span class="type">int</span> m_Password;</span><br><span class="line"><span class="comment">//下面就是一个行为</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  m_Name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">  m_Car = <span class="string">&quot;拖拉机&quot;</span>;</span><br><span class="line">  m_Password = <span class="number">123456</span>;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>上面的代码就是一个类的具体实现，其实可以看出其与结构体对比就仅仅多出来一个权限，语法上进步不大，可思想上却是一次飞跃。</p><p><strong>好了，完了但没完全完，未完待续。。。。</strong></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 韬哥的c++入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“音乐功能上线了啊”</title>
+      <link href="/2022/10/04/%E2%80%9C%E9%9F%B3%E4%B9%90%E5%8A%9F%E8%83%BD%E4%B8%8A%E7%BA%BF%E4%BA%86%E5%95%8A%E2%80%9D/"/>
+      <url>/2022/10/04/%E2%80%9C%E9%9F%B3%E4%B9%90%E5%8A%9F%E8%83%BD%E4%B8%8A%E7%BA%BF%E4%BA%86%E5%95%8A%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<p>友友们，网站的音乐功能我也是废了好大劲的，结果因为太隐蔽而导致好多人不知道是什么鬼啊！？</p><p><img src="/2022/10/04/%E2%80%9C%E9%9F%B3%E4%B9%90%E5%8A%9F%E8%83%BD%E4%B8%8A%E7%BA%BF%E4%BA%86%E5%95%8A%E2%80%9D/86f71906b3f496a725a7c3300dc83a2.jpg"></p><p>一定要记住哦</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 唠唠叨叨 </tag>
+            
+        </tags>
       
     </entry>
     
