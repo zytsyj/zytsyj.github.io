@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="“指针”, do whatever you want">
+    <meta name="keywords" content="结构体, do whatever you want">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>“指针” | do whatever you want</title>
+    <title>结构体 | do whatever you want</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">“指针”</h1>
+                    <h1 class="description center-align post-title">结构体</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">韬哥的c语言入门</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -459,7 +463,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><strong>友友们，今天我们来为c++的面向对象来搞个前奏曲！哈哈，想不到吧c++的前奏我放到c里面了。</strong></p>
+<h2 id="结构体基本概念"><a href="#结构体基本概念" class="headerlink" title="结构体基本概念"></a>结构体基本概念</h2><p>结构体属于用户自定义的数据类型，允许用户存储不同的数据类型，也就是说把不同的数据类型绑定成一个小组。</p>
+<h2 id="结构体定义和使用"><a href="#结构体定义和使用" class="headerlink" title="结构体定义和使用"></a><strong>结构体定义和使用</strong></h2><p><strong>语法</strong>：</p>
+<p>struct 结构体名 { 结构体成员列表 }；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> age；<span class="comment">//年龄</span></span><br><span class="line">    <span class="type">char</span> name；<span class="comment">//名字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要注意的是，结构体的定义在主函数之前，并且只是作为一个模板来使用，之后在主函数中还需要创建这个结构体。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">xiaoMing</span>;</span></span><br><span class="line">    xiaoMing.age=<span class="number">18</span>;</span><br><span class="line">    xiaoMing.name=<span class="string">&quot;小明&quot;</span></span><br><span class="line">   <span class="comment">//这样就完成了一次结构体XiaoMing的创立</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结构体是一个十分重要的概念，因为其的自定义性，故而其具有很多灵活的语法，比如可以将结构体里装结构体，可以创建结构体数组，可以在结构体里装指向另一个结构体的指针。。。。。。这些就都是后话了，感兴趣的友友们可以去试试，这里就只是先把结构体的概念说一下。</p>
+<p>好了，祝各位友友们国庆节快乐！</p>
+
                 
             </div>
             <hr/>
@@ -485,7 +500,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zytsyj.github.io/2022/10/05/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/">http://zytsyj.github.io/2022/10/05/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/</a>
+                    <a href="http://zytsyj.github.io/2022/10/01/%E7%BB%93%E6%9E%84%E4%BD%93/">http://zytsyj.github.io/2022/10/01/%E7%BB%93%E6%9E%84%E4%BD%93/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -522,7 +537,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">韬哥的c语言入门</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -565,13 +584,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/05/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/">
+                <a href="/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="“类与对象之封装”">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="“指针”">
                         
-                        <span class="card-title">“类与对象之封装”</span>
+                        <span class="card-title">“指针”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -582,7 +601,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
                         </span>
                         <span class="publish-author">
                             
@@ -591,6 +610,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">韬哥的c语言入门</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -602,13 +629,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/05/%E7%BB%93%E6%9E%84%E4%BD%93/">
+                <a href="/2022/09/26/%E2%80%9C%E6%95%B0%E7%BB%84%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="结构体">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="“数组”">
                         
-                        <span class="card-title">结构体</span>
+                        <span class="card-title">“数组”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -619,7 +646,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-26
                             </span>
                         <span class="publish-author">
                             
@@ -628,6 +655,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">韬哥的c语言入门</span>
+                    </a>
+                    
                 </div>
                 
             </div>

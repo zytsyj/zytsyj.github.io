@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="结构体, do whatever you want">
+    <meta name="keywords" content="“指针”, do whatever you want">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>结构体 | do whatever you want</title>
+    <title>“指针” | do whatever you want</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">结构体</h1>
+                    <h1 class="description center-align post-title">“指针”</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">韬哥的c语言入门</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -459,7 +463,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><strong>礼赞吧！</strong>伟大的摸鱼摆烂大王终于想起来要讲指针了！（虽然想起来了，但是其实是抱着分成好几篇小文章的摆烂想法的）</p>
+<p>说到指针，它可以说是c语言的灵魂所在，c语言的所谓高效性，大半都是依托指针所实现的。简单来说，指针可以视为一种数据类型，与一般的数据类型差别不大，只不过它所占据的内存之中所储存的是一个机械地址，相当与一个索引。当计算机读入指针所储存的地址时，就会跳转到地址所对应的内存位置。值得一提的是，指针本身同样具有地址，于是乎，一个指针所储存的地址可以是另一个指针的地址。</p>
+<p>理解上面这些东西，接下来便是学会指针的语法了，其实也很简单：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> *b=&amp;a    </span><br></pre></td></tr></table></figure>
+
+<p>上面两条代码就是最简单的指针运用，第一行创建了一个整型变量a，第二行则是创建了一个指向整型的指针变量b，并且将a的地址赋值给了指针b。</p>
+<p>这里强调2个符号：<em>与&amp;，其中</em>   *是指针的标志同时也是解引用符；&amp;则是取地址符，即得到一个变量或常量的地址（在c++中&amp;被赋予了不同的含义，这个之后再说）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> c;</span><br><span class="line">c= *b;</span><br></pre></td></tr></table></figure>
+
+<p>这里便是对指针的解引用实例，即*是得到指针所储存的地址中储存的信息的意思，将这四行代码连接起来，你能不能得出c的值呢？</p>
+<p>这里再提一下多重指针，我不多说，一张图足矣</p>
+<p><img src="/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/8d15c9c7d6733235c31a03bc7a31cc9.jpg"></p>
+<p>拜拜啦！</p>
+<p>（再多提一嘴，指针的很妙，妙不可言，我希望各位小朋友们能多多开发想象力运用指针这个东西，在这个过程中你一定会遇到很多很多问题，解决它们便能大大增加你对计算机底层储存逻辑的认识！有实在不会的也可以来询问我哦）</p>
+
                 
             </div>
             <hr/>
@@ -485,7 +503,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zytsyj.github.io/2022/10/05/%E7%BB%93%E6%9E%84%E4%BD%93/">http://zytsyj.github.io/2022/10/05/%E7%BB%93%E6%9E%84%E4%BD%93/</a>
+                    <a href="http://zytsyj.github.io/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/">http://zytsyj.github.io/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -522,7 +540,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%9F%AC%E5%93%A5%E7%9A%84c%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">韬哥的c语言入门</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -565,13 +587,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/05/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/">
+                <a href="/2022/10/05/%E2%80%9C%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E5%B0%81%E8%A3%85%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="“指针”">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="“类与对象之封装”">
                         
-                        <span class="card-title">“指针”</span>
+                        <span class="card-title">“类与对象之封装”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -602,13 +624,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/26/%E2%80%9C%E6%95%B0%E7%BB%84%E2%80%9D/">
+                <a href="/2022/10/01/%E7%BB%93%E6%9E%84%E4%BD%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="“数组”">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="结构体">
                         
-                        <span class="card-title">“数组”</span>
+                        <span class="card-title">结构体</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -619,7 +641,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-01
                             </span>
                         <span class="publish-author">
                             

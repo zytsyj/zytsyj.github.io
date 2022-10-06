@@ -18,12 +18,18 @@
     
     <entry>
       <title>“指针”</title>
-      <link href="/2022/10/05/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/"/>
-      <url>/2022/10/05/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/</url>
+      <link href="/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/"/>
+      <url>/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><strong>礼赞吧！</strong>伟大的摸鱼摆烂大王终于想起来要讲指针了！（虽然想起来了，但是其实是抱着分成好几篇小文章的摆烂想法的）</p><p>说到指针，它可以说是c语言的灵魂所在，c语言的所谓高效性，大半都是依托指针所实现的。简单来说，指针可以视为一种数据类型，与一般的数据类型差别不大，只不过它所占据的内存之中所储存的是一个机械地址，相当与一个索引。当计算机读入指针所储存的地址时，就会跳转到地址所对应的内存位置。值得一提的是，指针本身同样具有地址，于是乎，一个指针所储存的地址可以是另一个指针的地址。</p><p>理解上面这些东西，接下来便是学会指针的语法了，其实也很简单：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> *b=&amp;a    </span><br></pre></td></tr></table></figure><p>上面两条代码就是最简单的指针运用，第一行创建了一个整型变量a，第二行则是创建了一个指向整型的指针变量b，并且将a的地址赋值给了指针b。</p><p>这里强调2个符号：<em>与&amp;，其中</em>   *是指针的标志同时也是解引用符；&amp;则是取地址符，即得到一个变量或常量的地址（在c++中&amp;被赋予了不同的含义，这个之后再说）。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> c;</span><br><span class="line">c= *b;</span><br></pre></td></tr></table></figure><p>这里便是对指针的解引用实例，即*是得到指针所储存的地址中储存的信息的意思，将这四行代码连接起来，你能不能得出c的值呢？</p><p>这里再提一下多重指针，我不多说，一张图足矣</p><p><img src="/2022/10/03/%E2%80%9C%E6%8C%87%E9%92%88%E2%80%9D/8d15c9c7d6733235c31a03bc7a31cc9.jpg"></p><p>拜拜啦！</p><p>（再多提一嘴，指针的很妙，妙不可言，我希望各位小朋友们能多多开发想象力运用指针这个东西，在这个过程中你一定会遇到很多很多问题，解决它们便能大大增加你对计算机底层储存逻辑的认识！有实在不会的也可以来询问我哦）</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 韬哥的c语言入门 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -31,12 +37,18 @@
     
     <entry>
       <title>结构体</title>
-      <link href="/2022/10/05/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
-      <url>/2022/10/05/%E7%BB%93%E6%9E%84%E4%BD%93/</url>
+      <link href="/2022/10/01/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
+      <url>/2022/10/01/%E7%BB%93%E6%9E%84%E4%BD%93/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><strong>友友们，今天我们来为c++的面向对象来搞个前奏曲！哈哈，想不到吧c++的前奏我放到c里面了。</strong></p><h2 id="结构体基本概念"><a href="#结构体基本概念" class="headerlink" title="结构体基本概念"></a>结构体基本概念</h2><p>结构体属于用户自定义的数据类型，允许用户存储不同的数据类型，也就是说把不同的数据类型绑定成一个小组。</p><h2 id="结构体定义和使用"><a href="#结构体定义和使用" class="headerlink" title="结构体定义和使用"></a><strong>结构体定义和使用</strong></h2><p><strong>语法</strong>：</p><p>struct 结构体名 { 结构体成员列表 }；</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> age；<span class="comment">//年龄</span></span><br><span class="line">    <span class="type">char</span> name；<span class="comment">//名字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>要注意的是，结构体的定义在主函数之前，并且只是作为一个模板来使用，之后在主函数中还需要创建这个结构体。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">xiaoMing</span>;</span></span><br><span class="line">    xiaoMing.age=<span class="number">18</span>;</span><br><span class="line">    xiaoMing.name=<span class="string">&quot;小明&quot;</span></span><br><span class="line">   <span class="comment">//这样就完成了一次结构体XiaoMing的创立</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>结构体是一个十分重要的概念，因为其的自定义性，故而其具有很多灵活的语法，比如可以将结构体里装结构体，可以创建结构体数组，可以在结构体里装指向另一个结构体的指针。。。。。。这些就都是后话了，感兴趣的友友们可以去试试，这里就只是先把结构体的概念说一下。</p><p>好了，祝各位友友们国庆节快乐！</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 韬哥的c语言入门 </tag>
+            
+        </tags>
       
     </entry>
     
